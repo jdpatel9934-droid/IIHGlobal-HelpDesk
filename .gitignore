@@ -1,0 +1,19 @@
+# Environment files can contain local credentials and secrets.
+.env
+.env.*
+!.env.example
+
+# JavaScript dependencies and generated output.
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+coverage/
+**/coverage/
+*.tsbuildinfo
+npm-debug.log*
+
+# Local editor and operating-system files.
+.DS_Store
+.idea/
+.vscode/

@@ -1,0 +1,42 @@
+{
+  "name": "support-ticket-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "REST API for a role-based support ticket tracker",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/main.js",
+    "start:dev": "node --watch -r ts-node/register -r tsconfig-paths/register src/main.ts",
+    "start:prod": "node dist/main.js",
+    "seed": "ts-node -r tsconfig-paths/register src/database/seed.ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tsc --noEmit -p tsconfig.build.json && prettier --check \"src/**/*.ts\""
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.2.10",
+    "@nestjs/config": "^4.0.4",
+    "@nestjs/core": "^11.2.10",
+    "@nestjs/jwt": "^11.0.2",
+    "@nestjs/mongoose": "^11.0.4",
+    "@nestjs/passport": "^11.0.5",
+    "@nestjs/platform-express": "^11.2.10",
+    "bcryptjs": "^3.0.3",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "dotenv": "^16.4.7",
+    "mongoose": "^8.9.5",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.5",
+    "@types/passport-jwt": "^4.0.1",
+    "prettier": "^3.4.2",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.7.2"
+  }
+}
