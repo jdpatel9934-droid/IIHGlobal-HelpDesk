@@ -32,6 +32,7 @@ Send `Authorization: Bearer <accessToken>` on protected endpoints.
 | GET | `/api/auth/profile` | Authenticated | Return the current profile, excluding password |
 
 Passwords must be 12-128 characters on signup. Role assignment during signup is always `employee`.
+Login is limited to five attempts per minute per client IP; further attempts receive HTTP 429 until the limit window resets.
 
 ## Tickets
 

@@ -39,7 +39,7 @@ npm run seed
 npm run start:dev
 ```
 
-The API is available at `http://localhost:3000/api`.
+The API is available at `http://localhost:5000/api`.
 
 ### 2. Configure and start the frontend
 

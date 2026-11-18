@@ -2,6 +2,7 @@ import { Module } from "@nestjs/common";
 import { ConfigModule, ConfigService } from "@nestjs/config";
 import { JwtModule } from "@nestjs/jwt";
 import { MongooseModule } from "@nestjs/mongoose";
+import { ThrottlerModule } from "@nestjs/throttler";
 import { AuthModule } from "./auth/auth.module";
 import { TicketsModule } from "./tickets/tickets.module";
 import { UsersModule } from "./users/users.module";
@@ -30,6 +31,7 @@ import { UsersModule } from "./users/users.module";
         },
       }),
     }),
+    ThrottlerModule.forRoot([{ ttl: 60_000, limit: 5 }]),
     UsersModule,
     AuthModule,
     TicketsModule,

@@ -7,6 +7,7 @@ import {
   Post,
   UseGuards,
 } from "@nestjs/common";
+import { ThrottlerGuard } from "@nestjs/throttler";
 import { CurrentUser } from "../common/decorators/current-user.decorator";
 import { JwtAuthGuard } from "../common/guards/jwt-auth.guard";
 import { AuthenticatedUser } from "../common/interfaces/authenticated-user.interface";
@@ -31,6 +32,7 @@ export class AuthController {
 
   @Post("login")
   @HttpCode(HttpStatus.OK)
+  @UseGuards(ThrottlerGuard)
   login(
     @Body() dto: LoginDto,
   ): Promise<{ accessToken: string; user: PublicUser }> {
