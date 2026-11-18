@@ -18,6 +18,7 @@ export class AuthService {
   async signup(
     dto: SignupDto,
   ): Promise<{ accessToken: string; user: PublicUser }> {
+    
     const user = await this.usersService.create(
       dto.email,
       await bcrypt.hash(dto.password, this.bcryptRounds),
